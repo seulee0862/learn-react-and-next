@@ -1,6 +1,8 @@
+import './Body.css'
+
 export default function Body() {
     return (
-        <div>
+        <div className='body'>
             <h1>BODY</h1>
         </div>
     )

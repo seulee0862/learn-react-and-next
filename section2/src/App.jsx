@@ -8,11 +8,10 @@ function App() {
   return (
     <>
       <Header/>
-      <h1>안녕 리액트</h1>
       <Body/>
       <Footer/>
     </>
-  )
+  )  
 }
 
 export default App

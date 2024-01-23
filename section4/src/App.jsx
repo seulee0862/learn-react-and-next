@@ -2,21 +2,16 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Viewer from "./components/Viewer"
 import Controller from './components/Controller'
-import { useRef } from 'react';
 import Even from './components/Even';
+import useUpdate from './hooks/useUpdate';
+import useInput from './hooks/useInput';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [text, setText] = useState("");
+  const [text, onChangeText] = useInput("");
 
-  const isMountRef = useRef(false)
-
-  useEffect(() => {
-    if (!isMountRef.current) {
-      isMountRef.current = true;
-      return;
-    }
-    //control
+  useUpdate(() => {
+    console.log("APP 컴포넌트 업데이트")
   });
 
   useEffect(() => {
@@ -25,10 +20,6 @@ function App() {
 
   const onClickButton = (value) => {
     setCount(count + value);
-  }
-
-  const onChangeText = (e) => {
-    setText(e.target.value);
   }
 
   return (

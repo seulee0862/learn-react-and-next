@@ -1,4 +1,11 @@
-export default function Controller({onClickButton}) {
+import useUpdate from "../hooks/useUpdate";
+
+export default function Controller({ onClickButton }) {
+    
+    useUpdate(() => {
+        console.log("CONTROLLER 컴포넌트 업데이트");
+    })
+
     return <div>
         <button
             onClick={() => {

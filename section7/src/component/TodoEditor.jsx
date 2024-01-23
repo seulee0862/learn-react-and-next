@@ -32,7 +32,7 @@ export default function TodoEditor({ onCreate }) {
                 ref={inputRef}
                 value={content}
                 onChange={onChangeContent}
-                onKeyDown={}
+                onKeyDown={onKeyDown}
                 placeholder="새로운 Todo ..." />
             <button onClick={onClick}>추가</button>
         </div>

@@ -2,8 +2,7 @@ import Header from "./component/Header";
 import "./App.css";
 import TodoEditor from "./component/TodoEditor";
 import TodoList from "./component/TodoList";
-import { useState, useReducer } from "react";
-import { useRef } from "react";
+import { useState, useReducer, useRef, useCallback } from "react";
 
 const mockData = [
   {
@@ -58,19 +57,19 @@ function App() {
     });
   };
 
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback((targetId) => {
     dispatch({
       type: "UPDATE",
       data: targetId,
     });
-  };
+  }, []);
 
-  const onDelete = (targetId) => {
+  const onDelete = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
       data: targetId,
     });
-  };
+  }, []);
 
   return (
     <div className="App">

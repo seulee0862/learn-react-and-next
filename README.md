@@ -9,9 +9,10 @@
 - section1 - Node.js 입문
 - section2 - React소개, Virtaul DOM
 - section3 - Compoent, JSX, Props, State, Ref
-- section4 - 1,2,3 이용하여 counter App 만들기
+- section4 - 1,2,3 활용하여 counter App 만들기
 - section5 - Life recycle
 - section6 - React hook
+- section7 - 1~6 활용한 Todo List 만들기
 
 ## 추가 정보
 

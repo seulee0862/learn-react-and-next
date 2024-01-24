@@ -14,6 +14,7 @@
 - section6 - React hook
 - section7 - 1~6 활용한 Todo List 만들기
 - section8 - useReducer
+- section9 - useMemo, memo, useCallback
 
 ## 추가 정보
 

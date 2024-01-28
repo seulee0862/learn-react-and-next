@@ -1,32 +1,24 @@
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { fetchCountries } from "@/api";
+import { useEffect } from "react";
 
-export default function Home() {
-  const code = "KOR";
-  const router = useRouter();
-
-  const onClickButton = () => {
-    router.push("/search");
-  };
+export default function Home({ countries }) {
   return (
     <div>
-      Home Page
-      <div>
-        <button onClick={onClickButton}>Search 페이지로 이동</button>
-      </div>
-      <div>
-        <Link href={"/search"}>Search Page 이동</Link>
-      </div>
-      <div>
-        <Link
-          href={{
-            pathname: "/country/[code]",
-            query: { code: code },
-          }}
-        >
-          {code} 페이지로 이동
-        </Link>
-      </div>
+      {countries.map((country) => (
+        <div key={country.code}>{country.commonName}</div>
+      ))}
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  // API호출 코드 필요
+
+  const countries = await fetchCountries();
+
+  return {
+    props: {
+      countries,
+    },
+  };
 }

@@ -20,6 +20,7 @@
 - section12~13 - Page Router
 - section14 - SSR
 - section15 - SSG
+- section16 - ISR(Incremental Static Regeneration)
 
 ## 추가 정보
 

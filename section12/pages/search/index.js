@@ -3,7 +3,7 @@ import SubLayout from "@/components/SubLayout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function Search({ countries }) {
+export default function Search() {
   const router = useRouter();
   const { q } = router.query;
 

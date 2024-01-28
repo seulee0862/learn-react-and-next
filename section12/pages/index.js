@@ -1,32 +1,23 @@
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Home() {
-  const code = "KOR";
-  const router = useRouter();
+export default function Home({ name }) {
+  console.log("HOME");
 
-  const onClickButton = () => {
-    router.push("/search");
+  useEffect(() => {
+    console.log("COMPONENT MOUNT");
+  }, []);
+
+  return <div>{name}</div>;
+}
+
+export async function getServerSideProps() {
+  // SSR을 위해 서버 측에서 페이지 컴포넌트에게 전달할 데이터를 설정하는 함수
+
+  console.log("getServerSideProps Called");
+
+  return {
+    props: {
+      name: "KOREA",
+    },
   };
-  return (
-    <div>
-      Home Page
-      <div>
-        <button onClick={onClickButton}>Search 페이지로 이동</button>
-      </div>
-      <div>
-        <Link href={"/search"}>Search Page 이동</Link>
-      </div>
-      <div>
-        <Link
-          href={{
-            pathname: "/country/[code]",
-            query: { code: code },
-          }}
-        >
-          {code} 페이지로 이동
-        </Link>
-      </div>
-    </div>
-  );
 }

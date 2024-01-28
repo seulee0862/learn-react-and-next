@@ -6,6 +6,14 @@ export default function Country({ country }) {
   const router = useRouter();
   const { code } = router.query;
 
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  if (!country) {
+    return <div>존재하지 않는 국가 입니다.</div>;
+  }
+
   return (
     <div>
       {country.commonName} {country.officialName}
@@ -15,7 +23,14 @@ export default function Country({ country }) {
 
 Country.Layout = SubLayout;
 
-export const getServerSideProps = async (context) => {
+export const getStaticPaths = async () => {
+  return {
+    paths: [{ params: { code: "ABW" } }, { params: { code: "KOR" } }],
+    fallback: true,
+  };
+};
+
+export const getStaticProps = async (context) => {
   const { code } = context.params;
 
   let country = null;

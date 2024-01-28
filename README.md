@@ -21,6 +21,7 @@
 - section14 - SSR
 - section15 - SSG
 - section16 - ISR(Incremental Static Regeneration)
+- section17 - NARAS(Next.js)
 
 ## 추가 정보
 

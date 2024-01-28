@@ -18,6 +18,7 @@
 - section10 - Context
 - section11 - Route, 1~11활용하여 NARAS 만들기, Varcel
 - section12~13 - Page Router
+- section14 - SSR
 
 ## 추가 정보
 
